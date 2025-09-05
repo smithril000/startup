@@ -10,8 +10,9 @@
 
 ## AWS
 
-My IP address is: 54.81.96.130
-Launching my AMI I initially put it on a private subnet. Even though it had a public IP address and the security group was right, I wasn't able to connect to it.
+I was able to create a AWS account with no problem
+I also was able to practice using github without much issue
+
 
 ## Caddy
 
