@@ -1,4 +1,4 @@
-# Your startup name here
+Riley Smith
 
 [My Notes](notes.md)
 
