@@ -1,0 +1,1 @@
+Here are my notes for the class
