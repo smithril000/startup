@@ -1,18 +1,18 @@
 # 260_Project
-## Elevator Pitch\
+## Elevator Pitch
 For my project I want to re-create a game called bank.\
 The game functions as follows\
-    -Each player rolls two dice on their turn\
+    \t-Each player rolls two dice on their turn\
     -Each roll adds to everyones score\
     -Doubles double the score\
     -If anyone rolls a 7 the score goes to 0\
     -At anytime you can bank to save the points, but you can no longer continue to earn points.\
 
-## Key Features\
-    -Login System for highscores\
-    -Dice animation\
-    -Score tracking and updating\
-    -Rule implementations\
+## Key Features
+    -Login System for highscores
+    -Dice animation
+    -Score tracking and updating
+    -Rule implementations
 
 ## Technology Descriptions
     -HTML : 3 HTML pages. One for login, game, and highscore pages\
