@@ -27,6 +27,6 @@ For my project I want to re-create a game called bank.\
 &emsp;&emsp;-DB : stores highscores, and individual game scores, and individual player scores\
 &emsp;&emsp;-WebSocket : Highscores updated for all players\
 
-![IMG_1248](https://github.com/user-attachments/assets/477ff226-2f18-4354-99b0-b9fae69aa980)
+![IMG_1248](/Images/IMG_1248.jpg)
 
-![IMG_1247](https://github.com/user-attachments/assets/84881b05-6dad-42f1-8de7-56d27f4903d6)
+![IMG_1247](Images/IMG_1247.jpg)
