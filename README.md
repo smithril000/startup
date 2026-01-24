@@ -30,3 +30,4 @@ For my project I want to re-create a game called bank.\
 ![IMG_1248](/Images/IMG_1248.jpg)
 
 ![IMG_1247](Images/IMG_1247.jpg)
+</html>
