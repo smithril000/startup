@@ -31,3 +31,16 @@ For my project I want to re-create a game called bank.\
 
 ![IMG_1247](Images/IMG_1247.jpg)
 </html>
+## HTML deliverable
+
+For this deliverable I built out the structure of my application using HTML.
+
+- [x] I completed the prerequisites for this deliverable
+- [x] **HTML pages** - Three pages for home, gameplay, and highscores
+- [x] **Proper HTML element usage** - Uses head,body, and footer along with div 
+- [x] **Links** - Each page is linked together
+- [x] **Text** - Appropriate text where needed
+- [ ] **3rd party API placeholder** - Still unsure what will fit in with my project
+- [x] **Images** - Image for dice, still a place-holder for final, but similar in style
+- [x] **DB/Login** - Login area for saving highscore, nothing there just temp for now
+- [x] **WebSocket** - Highscores will be updated
