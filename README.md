@@ -30,7 +30,7 @@ For my project I want to re-create a game called bank.\
 ![IMG_1248](/Images/IMG_1248.jpg)
 
 ![IMG_1247](Images/IMG_1247.jpg)
-</html>
+
 ## HTML deliverable
 
 For this deliverable I built out the structure of my application using HTML.
