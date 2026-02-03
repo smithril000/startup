@@ -1,11 +1,47 @@
 header{
-    font-family: Arial;
-    color:#F0F8FF;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: left;
     background-color: #86C5D8;
-}
-body{
-    background-color: #CAE9F5;
+    padding-left: 1%;
+    white-space: nowrap;
+    font-family: 'Courier New', Courier, monospace;
 }
 h1{
-    border-left-width: 50px;
+    padding-top:3vh;
+    margin:0;
+}
+menu{
+    display: flex;
+    list-style-type: none;
+    padding:0;
+    gap: 10px;
+}
+.button1, .button2{
+    color:black;
+    background-color: #b1d3dd;
+}
+.button1 a, .button2 a, .button3 a{
+    text-decoration: none;
+    color:black;
+}
+main{
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #CAE9F5;
+    min-height: 65vh;
+}
+.listOfPlayers{
+    
+    margin:0;
+    padding:0;
+}
+.button3{
+    color:black;
+    background-color: #ffffff;
+    padding: 15px;
 }
