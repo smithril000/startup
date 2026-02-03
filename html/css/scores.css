@@ -1,0 +1,10 @@
+header{
+    border: 1px solid black;
+    display: flex;
+    align-content: center;
+}
+menu{
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+}
