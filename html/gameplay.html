@@ -2,24 +2,35 @@
 <html lang en>
     <head>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <link rel="stylesheet" href="css/gameplay.css">
+            
         </ul>
     </head>
     <body>
-        <div>
-            <h3>Players</h3>
-            <ul>
-                <li>Riley...43</li>
-                <li>Sarah...126</li>
-            </ul>
+        <header>
+            <a href="index.html"><button type="button">Leave Game</button></a>
+        </header>
+
+        <div class="gamearea">
+            <div class="scoreboard">
+                <h3>Players</h3>
+                <ul class ="playerList">
+                    <li>Riley...44</li>
+                    <li>Sarah...126</li>
+                </ul>
+            </div>
+        
+            <div class="gameplay">
+                <p class ="score">Score: 1024</p>
+                <div class="image_container"><img src="dice_image.png" alt="dice image" width=45%></div>
+            
+                <div class="roll"><button type="input">Roll!</button></div>
+            </div>
         </div>
-        <img src="dice_image.png" alt="dice image" width="150">
-        <div>
-            <button type="input">Roll!</button>
-        </div>
+
         <div id="popupContainer" class="popup-container">
             <div class="popup-content">
-                <hr >
+
                 <span id="closeBtn" class="close-btn">&times;</span>
                 <p>Game Over</p>
                 <p>If you would like to save your highscore, enter your info below</p>

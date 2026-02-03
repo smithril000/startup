@@ -1,0 +1,11 @@
+header{
+    font-family: Arial;
+    color:#F0F8FF;
+    background-color: #86C5D8;
+}
+body{
+    background-color: #CAE9F5;
+}
+h1{
+    border-left-width: 50px;
+}
