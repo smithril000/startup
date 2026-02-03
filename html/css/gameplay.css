@@ -1,0 +1,48 @@
+header{
+    background-color: #86C5D8;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+}
+
+.gamearea{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+.scoreboard {
+    display: grid;
+  flex: 1;
+  background-color:#CAE9F5;
+    align-content:  top;
+  padding-right: 5px;
+}
+.image_container{
+    display: flex;
+    justify-content: center;
+
+}
+.roll{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+}
+.gameplay {
+    display: grid;
+    flex: 3;
+    background-color:#F0F8FF;
+    justify-content: center;
+    align-content: center;
+
+    font-family: 'Courier New', Courier, monospace;
+}
+.score{
+    display: flex;
+    justify-content: center;
+}
+.playerList{
+    display: flex;
+    justify-content: top;
+    border: 1px solid black;
+}
