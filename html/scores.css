@@ -41,10 +41,16 @@ main{
     padding: 5px;
     font-family: 'Courier New', Courier, monospace;
     justify-content: top;
+    min-width: 170px;
+    width:30vw;
+    height:50vh;
+    font-size: 3.5vw;
+    
 }
 .scoreBoard{
     margin:0;
     padding:5px;
     list-style-type: none;
     border: 1px solid black;
+    font-size: 3.4vw;
 }
