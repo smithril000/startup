@@ -51,8 +51,8 @@ For this deliverable I built out the structure of my application using HTML.
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
 - [x] **Header, footer, and main content body** - I used a common CSS file to style these `main.css`. 
-- [x] **Navigation elements** - Bootstrap NavBar. What a time saver.
-- [x] **Responsive to window resizing** - Bootstrap and `display:flex' did most the work here. I'm really happy with the game rendering.
+- [x] **Navigation elements** - Custon buttons that change color on hover
+- [x] **Responsive to window resizing** - EVerything re-sizes. I am not completely happy with it, but it does work
 - [x] **Application elements** - I used a lot of `display:flex` to get things to align correctly.
-- [x] **Application text content** - Set all my text to Helvetica and it looks nice and clean.
+- [x] **Application text content** - All text has fonts
 - [x] **Application images** - I left the about image as is.
