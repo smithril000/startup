@@ -44,3 +44,15 @@ For this deliverable I built out the structure of my application using HTML.
 - [x] **Images** - Image for dice, still a place-holder for final, but similar in style
 - [x] **DB/Login** - Login area for saving highscore, nothing there just temp for now
 - [x] **WebSocket** - Highscores will be updated
+
+
+## 🚀 CSS deliverable
+
+For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
+
+- [x] **Header, footer, and main content body** - I used a common CSS file to style these `main.css`. 
+- [x] **Navigation elements** - Bootstrap NavBar. What a time saver.
+- [x] **Responsive to window resizing** - Bootstrap and `display:flex' did most the work here. I'm really happy with the game rendering.
+- [x] **Application elements** - I used a lot of `display:flex` to get things to align correctly.
+- [x] **Application text content** - Set all my text to Helvetica and it looks nice and clean.
+- [x] **Application images** - I left the about image as is.
