@@ -9,3 +9,7 @@ domain for startup html : https://startup.bankdicegame.click
 
 
 side note- put button within the a tag to make the qhole thing work not just the text
+
+some React Note
+![IMG_1281](/Images/IMG_1281.jpg)
+![IMG_1281](/Images/IMG_1282.jpg)
