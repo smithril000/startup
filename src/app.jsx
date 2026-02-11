@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { Home } from './home/home';
+import { Gameplay} from './gameplay/gameplay';
 import { Scores } from './scores/scores';
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
                 <nav>
                     <menu>
                         <li><button className="button1" type="button"><NavLink className="nav-link" to="">Home</NavLink></button></li>
+                        <li><button className="button2" type="button"><NavLink className="nav-link" to="/gameplay">Play</NavLink></button></li>
                         <li><button className="button2" type="button"><NavLink className="nav-link" to="scores">High Scores</NavLink></button></li>
                     </menu>
                 </nav>
@@ -21,6 +23,7 @@ export default function App() {
         </header>
         <Routes>
             <Route path='/' element={<Home />} exact />
+            <Route path='/gameplay' element={<Gameplay />} />
             <Route path='/scores' element={<Scores />} />
         </Routes>
 

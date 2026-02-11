@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 header{
     border: 1px solid black;
     display: flex;
@@ -7,7 +9,7 @@ header{
     background-color: #86C5D8;
     padding-left: 1%;
     white-space: nowrap;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Tomorrow", sans-serif;
 }
 h1{
     padding-top:3vh;
@@ -30,3 +32,4 @@ menu{
 .button1:hover, .button2:hover, .button3:hover{
     background-color: #9dd0df;
 }
+

@@ -1,14 +1,4 @@
-header{
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: left;
-    background-color: #86C5D8;
-    padding-left: 1%;
-    white-space: nowrap;
-    font-family: 'Courier New', Courier, monospace;
-}
+
 h1{
     padding-top:3vh;
     margin:0;
@@ -34,12 +24,12 @@ main{
     display: flex;
     align-items: top;
     justify-content: center;
+    font-family: "Tomorrow", sans-serif;
 }
 .scoreContainer{
     
     margin: 5px;
     padding: 5px;
-    font-family: 'Courier New', Courier, monospace;
     justify-content: top;
     min-width: 170px;
     width:30vw;
