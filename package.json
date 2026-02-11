@@ -1,0 +1,42 @@
+{
+  "devDependencies": {
+    "vite": "^7.3.1"
+  },
+  "name": "startup",
+  "version": "1.0.0",
+  "description": "For my project I want to re-create a game called bank.\\ -The game functions as follows\\     &emsp;&emsp;-Each player rolls two dice on their turn\\     &emsp;&emsp;-Each roll adds to everyones score\\     &emsp;&emsp;-Doubles double the score\\     &emsp;&emsp;-If anyone rolls a 7 the score goes to 0\\     &emsp;&emsp;-At anytime you can bank to save the points, but you can no longer continue to earn points.",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "esbuild": "^0.27.3",
+    "fdir": "^6.5.0",
+    "nanoid": "^3.3.11",
+    "picocolors": "^1.1.1",
+    "picomatch": "^4.0.3",
+    "postcss": "^8.5.6",
+    "react": "^19.2.4",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.2.4",
+    "react-router": "^7.13.0",
+    "rollup": "^4.57.1",
+    "source-map-js": "^1.2.1",
+    "tinyglobby": "^0.2.15"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smithril000/startup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/smithril000/startup/issues"
+  },
+  "homepage": "https://github.com/smithril000/startup#readme"
+}
