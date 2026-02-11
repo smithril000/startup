@@ -1,5 +1,32 @@
-.body {
-  display: flex;
-  flex-direction: column;
-  min-width: 375px;
+header{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: left;
+    background-color: #86C5D8;
+    padding-left: 1%;
+    white-space: nowrap;
+    font-family: 'Courier New', Courier, monospace;
+}
+h1{
+    padding-top:3vh;
+    margin:0;
+}
+menu{
+    display: flex;
+    list-style-type: none;
+    padding:0;
+    gap: 10px;
+}
+.button1, .button2{
+    color:black;
+    background-color: #b1d3dd;
+}
+.button1 a, .button2 a, .button3 a{
+    text-decoration: none;
+    color:black;
+}
+.button1:hover, .button2:hover, .button3:hover{
+    background-color: #9dd0df;
 }
