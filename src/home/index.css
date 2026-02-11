@@ -38,7 +38,7 @@ main{
     background-color: #CAE9F5;
     min-height: 65vh;
     white-space: nowrap;
-    font-size: 4vh;
+    font-size: 2vh;
     padding:10px;
     max-height: 80vh;
 }
@@ -84,7 +84,7 @@ main{
     min-width: 120px;
     width:10vw;
     height: 6vh;
-    font-size: 3vh;
+    font-size: 2vh;
 }
 h2{
     padding:10px;
