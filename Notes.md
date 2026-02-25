@@ -18,3 +18,5 @@ things i need to do for react
 -add rop people from list
 -rules
 -gameplay
+-login
+-placeholder for websocket(kike updating hishgscores)
