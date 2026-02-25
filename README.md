@@ -56,3 +56,10 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [x] **Application elements** - I used a lot of `display:flex` to get things to align correctly.
 - [x] **Application text content** - All text has fonts
 - [x] **Application images** - I left the about image as is.
+
+
+## 🚀 React Phase 1
+
+- [x] **Bundled using Vite** - Completed, 
+- [x] **Multiple react components that contain your HTML and CSS.** - Completed, everything has been moved over to jsx files
+- [x] **React router** - Everything moves by the router

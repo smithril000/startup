@@ -13,3 +13,8 @@ side note- put button within the a tag to make the qhole thing work not just the
 some React Note
 ![IMG_1281](/Images/IMG_1281.jpg)
 ![IMG_1281](/Images/IMG_1282.jpg)
+--
+things i need to do for react
+-add rop people from list
+-rules
+-gameplay
