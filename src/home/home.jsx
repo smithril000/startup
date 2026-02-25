@@ -4,7 +4,7 @@ import './index.css';
 import {useNavigate} from 'react-router-dom';
 
 export function Home() {
-    const [userName, setUser] = React.useState(localStorage.getItem('user'))
+    const [userName, setUser] = React.useState(localStorage.getItem('user') || null)
     const [text, setText] = React.useState("")
     const navigate = useNavigate();
 
