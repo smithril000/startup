@@ -1,27 +1,27 @@
+
 import React from 'react';
 import './gameplay.css';
 export function Gameplay() {
-  return (
-    <body>
-        
+    const [text, setText] = React.useState('');
+    const [userList, setUserList] = React.useState('');
 
+    function change(e){
+        setText(e.target.value);
+    }
+
+  return (
+    <main>
         <div className="gamearea">
             <div className = "addPlayerArea">
                 <h2>Who's playing?</h2>
                 <div className="enterName">
-                    <input type="text" id="inputBox" placeholder="Player name" />
+                    <input type="text" id="inputBox" onChange={change} placeholder="Player name" />
                     <button id="addPlayerButton" type="submit">Add player</button>
                 </div>
                 <div className="listOfPlayers">
                     <ul>
                         <li>Riley<button className="removeButton" type="button">remove</button></li>
-                        <li>Sarah<button className="removeButton" type="button">remove</button></li>
-                        <li>John<button className="removeButton" type="button">remove</button></li>
-                        <li>Reed<button className="removeButton" type="button">remove</button></li>
-                        <li>Riley<button className="removeButton" type="button">remove</button></li>
-                        <li>Riley<button className="removeButton" type="button">remove</button></li>
-                        <li>Riley<button className="removeButton" type="button">remove</button></li>
-                        <li>Riley<button className="removeButton" type="button">remove</button></li>
+                        <li>{text}</li>
                     </ul>
                 </div>
             </div>
@@ -41,6 +41,6 @@ export function Gameplay() {
         </div>
 
         
-    </body>
+    </main>
   );
 }
