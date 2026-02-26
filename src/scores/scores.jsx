@@ -1,7 +1,7 @@
 import React from 'react';
 import './scores.css';
 export function Scores() {
-  const [scores, setScores] = React.useState(localStorage.getItem('scores') || null);
+  const [scores, setScores] = React.useState(localStorage.getItem('scores') || 'null');
 
   setInterval(() => {
   // This will be replaced with WebSocket messages
