@@ -97,6 +97,7 @@
     color:black;
     background-color: #ffffff;
     max-width: 10vh;
+    margin: 5px;
 }
 .removeButton:hover{
     background-color: #9ad1e7;
