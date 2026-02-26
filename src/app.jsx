@@ -5,6 +5,7 @@ import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { Home } from './home/home';
 import { Gameplay} from './gameplay/gameplay';
 import { Scores } from './scores/scores';
+import { Rules } from './rules/rules';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
                         <li><button className="button1" type="button"><NavLink className="nav-link" to="">Home</NavLink></button></li>
                         <li><button className="button2" type="button"><NavLink className="nav-link" to="/gameplay">Play</NavLink></button></li>
                         <li><button className="button2" type="button"><NavLink className="nav-link" to="scores">High Scores</NavLink></button></li>
+                        <li><button className="button2" type="button"><NavLink className="nav-link" to="/rules">Rules</NavLink></button></li>
                     </menu>
                 </nav>
 
@@ -25,6 +27,7 @@ export default function App() {
             <Route path='/' element={<Home />} exact />
             <Route path='/gameplay' element={<Gameplay />} />
             <Route path='/scores' element={<Scores />} />
+            <Route path='/rules' element={<Rules />} />
         </Routes>
 
         <footer>

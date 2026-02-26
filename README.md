@@ -63,3 +63,10 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [x] **Bundled using Vite** - Completed, 
 - [x] **Multiple react components that contain your HTML and CSS.** - Completed, everything has been moved over to jsx files
 - [x] **React router** - Everything moves by the router
+
+## 🚀 React part 2: Reactivity
+
+For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
+
+- [x] **All functionality implemented or mocked out** - Mostly using local storage to store user and scores. WebSocket notifications mocked with a timer.
+- [x] **Hooks** - Extensive use of `useEffect`. I also had to use `useRef` so that the play top level component could execute the color sequence for the user on the child button components.
