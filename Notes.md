@@ -15,7 +15,7 @@ some React Note
 ![IMG_1281](/Images/IMG_1282.jpg)
 --
 things i need to do for react
--add rop people from list
+-add rop people from list done
 -rules
 -gameplay
 -login - done?

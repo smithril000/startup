@@ -5,7 +5,10 @@ export function Gameplay() {
     const [text, setText] = React.useState('');
     const [userList, setUserList] = React.useState(localStorage.getItem('userList') || 'null');
     const [scoreList, setScoreList] = React.useState(localStorage.getItem('scoreList') || 'null');
-
+    const [score, updateScore] = React.useState(localStorage.getItem('score') || '0');
+    const [roll, setRoll] = React.useState('');
+    const [round, setRound] = React.useState(localStorage.getItem('round')|| '0');
+    
     function change(e){
         setText(e.target.value);
     }
@@ -55,8 +58,90 @@ export function Gameplay() {
         scoreList[index][1] = true
         localStorage.setItem('scoreList', JSON.stringify(scoreList))
         setScoreList(JSON.stringify(scoreList))
+        //we also want to check if both players have banked
+        allBanked();
     }
+    function allBanked(){
+        let check = true;
+        let list = [[]]
+        list = JSON.parse(localStorage.getItem('scoreList'));
+        
+        for(const thing of list){
+            console.log(thing);
+            if(thing[1] == false){
+                check = false;
+            }
+        }
+        console.log("check is ", check);
+        if(check){
+            //everyone has banked
+            //set score and round changes
+            localStorage.setItem('round', parseInt(round) + 1)
+            setRound(parseInt(round) + 1);
+            localStorage.setItem('score', 0);
+            updateScore(0);
+            //now revert everyone to unbanked
+            //i will put this in other func so it can be called elsewhere
+            allUnBank();
+        }
+    }
+    function allUnBank(){
+        let check = true;
+        let list = [[]]
+        list = JSON.parse(scoreList);
+        for(const thing of list){
+            thing[1] = false;
+        }
+        //now to return the list
+        localStorage.setItem('scoreList', JSON.stringify(list));
+        setScoreList(JSON.stringify(list));
+    }
+    function rollDice(){
+        let dice1 = 0;
+        let dice2 = 0;
+        dice1 = Math.floor(Math.random() * 6) + 1;
+        dice2 = Math.floor(Math.random() * 6) + 1;
+        setRoll(dice1+dice2);
+        console.log(roll);
+        if(dice1+dice2 == 7){
+            //score resets, people lose points
+            console.log("found a seven")
+            updateScores(parseInt(localStorage.getItem('score')) * -1);
+            localStorage.setItem('score', 0);
+            updateScore(0);
+            //this also ends the round
+            localStorage.setItem('round', parseInt(round) + 1);
+            setRound(parseInt(round) + 1);
+        }else if(dice1==dice2){
+            updateScores(parseInt(localStorage.getItem('score')) * 2 - parseInt(localStorage.getItem('score')));
+            localStorage.setItem('score', ((parseInt(score) * 2)));
+            updateScore((parseInt(score) + (parseInt(score) * 2)));
+        }
+        else{
+            updateScores(dice1+dice2);
+            //localStorage.setItem('score', score)
+            //now we need to update individual scores
+            localStorage.setItem('score', dice1+dice2 + parseInt(score));
+            updateScore(dice1+dice2 + parseInt(score));
+        }
+        updateScore(localStorage.getItem('score'));
+        console.log("setting the score to", localStorage.getItem('score'));
+        
 
+        function updateScores(amount){
+            let list = [[]]
+            list = JSON.parse(scoreList)
+            for(const thing of list){
+                if(thing[1] == false){
+                    thing[0] = thing[0] + amount;
+                }
+            }
+            //return the list
+            setScoreList(JSON.stringify(list));
+            localStorage.setItem('scoreList', JSON.stringify(list));
+        }
+        
+    }
 
     //document.getElementById("removeButton").onclick = removePlayer;
   return (
@@ -75,10 +160,12 @@ export function Gameplay() {
                 </div>
             </div>
             <div className="gameplay">
-                <p className ="score">Score: 1024</p>
+                <div>Round: {localStorage.getItem('round')}</div>
+                <p className ="score">Score: {localStorage.getItem('score')}</p>
                 <img src="dice_image.png" alt="dice image" id="imageContainer" ></img>
             
-                <button id="roll" type="input">Roll!</button>
+                <button id="roll" type="input" onClick={rollDice}>Roll!</button>
+                {roll != '' && <div>You Rolled a {roll}</div>}
             </div>
             <div className="scoreboard">
                 <h3>Players</h3>
