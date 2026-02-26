@@ -96,7 +96,10 @@
 .removeButton{
     color:black;
     background-color: #ffffff;
-    max-width: 100px;
+    max-width: 10vh;
+}
+.removeButton:hover{
+    background-color: #9ad1e7;
 }
 .button3{
     color:black;

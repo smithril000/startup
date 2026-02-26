@@ -20,3 +20,6 @@ things i need to do for react
 -gameplay
 -login - done?
 -placeholder for websocket(kike updating hishgscores)
+
+--notes for react/js
+to pass a function that needs parameters for onClick use onCLick={() => myFunction(paras)}

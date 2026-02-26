@@ -3,29 +3,43 @@ import React from 'react';
 import './gameplay.css';
 export function Gameplay() {
     const [text, setText] = React.useState('');
-    const [userList, setUserList] = React.useState(localStorage.getItem('userList') || null);
+    const [userList, setUserList] = React.useState(localStorage.getItem('userList') || 'null');
 
     function change(e){
         setText(e.target.value);
     }
     function addPlayer(){
         //localStorage.setItem('userList', null)
-        let list = [];
-        if(userList == 'null'){
-            //we need to create our list and push
-            list = [text];   
-            
-        }else{
-            //we just need to get and push
-            list = JSON.parse(userList)
-            list.push(text)
+        //we only want to do this if they are adding a name
+        if(text != ''){
+            let list = [];
+            if(userList == 'null'){
+                //we need to create our list and push
+                list = [text];   
+                
+            }else{
+                //we just need to get and push
+                list = JSON.parse(userList)
+                list.push(text)
+            }
+            //now push back to memory
+            //test
+            console.log(JSON.stringify(list))
+            setUserList(JSON.stringify(list));
+            localStorage.setItem('userList', JSON.stringify(list))
         }
-        //now push back to memory
-        setUserList(JSON.stringify(list));
-        localStorage.setItem('userList', userList)
-
     }
 
+    function removePlayer(index){
+        let list = [];
+        //first get the list back from json
+        list = JSON.parse(userList);
+        list.splice(index, 1);
+        localStorage.setItem('userList', JSON.stringify(list));
+        setUserList(JSON.stringify(list))
+    }
+
+    //document.getElementById("removeButton").onclick = removePlayer;
   return (
     <main>
         <div className="gamearea">
@@ -36,9 +50,8 @@ export function Gameplay() {
                     <button id="addPlayerButton" onClick={addPlayer} type="submit">Add player</button>
                 </div>
                 <div className="listOfPlayers">
-                    <ul>
-                        <li>Riley<button className="removeButton" type="button">remove</button></li>
-                        
+                    <ul id="myList">
+                        {userList != 'null' && JSON.parse(userList).map((todo, index) => (<li key = {index}>{todo}<button className="removeButton" type="button" onClick={ () => removePlayer(index)}>remove</button></li>))}
                     </ul>
                 </div>
             </div>
@@ -51,8 +64,7 @@ export function Gameplay() {
             <div className="scoreboard">
                 <h3>Players</h3>
                 <ul className ="playerList">
-                    <li>Riley...44</li>
-                    <li>Sarah...126</li>
+                    {userList != 'null' && JSON.parse(userList).map((todo, index) => (<li key = {index}>{todo}</li>))}
                 </ul>
             </div>
         </div>
