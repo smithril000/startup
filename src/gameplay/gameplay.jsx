@@ -154,8 +154,8 @@ export function Gameplay() {
     function restart(){
         localStorage.setItem('score', 0);
         updateScore(0);
-        localStorage.setItem('state', true);
-        setState(true);
+        localStorage.setItem('state', 'true');
+        setState('true');
         localStorage.setItem('round', 0);
         setRound(0);
         //keep users but reset their score
@@ -185,7 +185,7 @@ export function Gameplay() {
                     </ul>
                 </div>
             </div>
-            {localStorage.getItem('state') =='true' && <div className="gameplay">
+            {state =='true' && <div className="gameplay">
                 <div>Round: {localStorage.getItem('round')}</div>
                 <p className ="score">Score: {localStorage.getItem('score')}</p>
                 <img src="dice_image.png" alt="dice image" id="imageContainer" ></img>
