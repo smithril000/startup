@@ -70,3 +70,14 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 - [x] **All functionality implemented or mocked out** - Mostly using local storage to store user and scores. WebSocket notifications mocked with a timer in the scoreboard area. Also implemented sorting of the highscores to simulate that as well. 
 - [x] **Hooks** - Uses mostly useState for the changes, play area changes based of gameplay and so does the bank option
+
+## 🚀 Service deliverable
+
+For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
+
+- [x] **Node.js/Express HTTP service** - Installed Express with NPM. Default port on 3000.js`.
+- [x] **Static middleware for frontend** - Simple endpoints in `service/index`.
+- [x] **Calls to third party endpoints** - Rules page calls `quote.cs260.click`, renders the resulting JSON with React.
+- [x] **Backend service endpoints** - Simple endpoints in `service/index` for auth and scores.
+- [x] **Frontend calls service endpoints** - All mocked functionality removed from the frontend and replaced with calls to the service.
+- [x] **Supports registration, login, logout, and restricted endpoint** - Fully support authentication and restrict access to scores.
