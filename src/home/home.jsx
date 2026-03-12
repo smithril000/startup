@@ -2,12 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import {useNavigate} from 'react-router-dom';
+import {AuthState} from './authState'
 
-export function Home(props) {
-    const [userName, setUserName] = React.useState(props.userName);
+export function Home({ userName2, authState, onAuthChange }) {
+    const [userName, setUserName] = React.useState(userName2);
     const [password, setPassword] = React.useState('');
+    const [displayError, setDisplayError] = React.useState(null);
     const navigate = useNavigate();
 
+    console.log("test - we are in auth", authState)
+    console.log("test - the user is ", userName)
     async function login(){
         loginOrReg('/api/auth/login')
     }
@@ -25,11 +29,24 @@ export function Home(props) {
         });
         if (response?.status === 200) {
             localStorage.setItem('userName', userName);
-            props.onLogin(userName);
+            onAuthChange(userName, AuthState.Authenticated)
         } else {
             const body = await response.json();
             setDisplayError(`⚠ Error: ${body.msg}`);
         }
+    }
+
+    async function logout(){
+        fetch(`/api/auth/logout`, {
+        method: 'delete',
+        })
+        .catch(() => {
+            // Logout failed. Assuming offline
+        })
+        .finally(() => {
+        localStorage.removeItem('userName');
+        onAuthChange(userName, AuthState.Unauthenticated)
+        });
     }
 
     return (
@@ -37,7 +54,7 @@ export function Home(props) {
         <main>
                 
             <div id="popupContainer" className="popup-container">
-                <div className="popup-content">
+                {authState === AuthState.Unauthenticated && <div className="popup-content">
 
                     <div>
                         <input type="text" onChange={(e) => setUserName(e.target.value)} placeholder="your@email.com" />
@@ -47,7 +64,12 @@ export function Home(props) {
                     </div>
                     <button type="submit" onClick={login}>Login</button>
                     <button type="submit" onClick={reg}>Create</button>
-                </div>
+                </div>}
+                {authState === AuthState.Authenticated && <div className = "popup-content">
+                    <div>Playing as:</div>
+                    <div>{userName}</div>
+                    <button type="submit" onClick={logout}>Logout</button>
+                    </div>}
             </div>
         </main>
   );

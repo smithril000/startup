@@ -36,6 +36,20 @@ apiRouter.post('/auth/create', async (req, res) => {
     res.send({ email: user.email });
   }
 });
+//login a user
+apiRouter.post('/auth/login', async (req, res) => {
+  const user = await findUser('email', req.body.email);
+  if (user) {
+    if (await bcrypt.compare(req.body.password, user.password)) {
+      user.token = uuid.v4();
+      setAuthCookie(res, user.token);
+      res.send({ email: user.email });
+      console.log("succ loggee in");
+      return;
+    }
+  }
+  res.status(401).send({ msg: 'Unauthorized' });
+});
 
 
 
@@ -56,6 +70,16 @@ async function createUser(email, password) {
   users.push(user);
   console.log("succesfully added a user", user)
   return user;
+}
+
+// setAuthCookie in the HTTP response
+function setAuthCookie(res, authToken) {
+  res.cookie(authCookieName, authToken, {
+    maxAge: 1000 * 60 * 60 * 24 * 365,
+    secure: true,
+    httpOnly: true,
+    sameSite: 'strict',
+  });
 }
 
 app.listen(port, () => {

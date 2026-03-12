@@ -29,7 +29,8 @@ export default function App() {
 
         </header>
         <Routes>
-            <Route path='/' element={<Home userName={userName}
+            <Route path='/' element={<Home 
+                userName2={userName}
                 authState={authState}
                 onAuthChange={(userName, authState) => {
                   setAuthState(authState);
