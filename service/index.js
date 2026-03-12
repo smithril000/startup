@@ -24,6 +24,7 @@ app.use(`/api`, apiRouter);
 
 
 let users = []
+let scores = []
 //endpoints
 // CreateAuth a new user
 apiRouter.post('/auth/create', async (req, res) => {
@@ -83,6 +84,29 @@ apiRouter.delete('/auth/logout', async (req, res) => {
   console.log("succ loged out")
 });
 
+// Middleware to verify that the user is authorized to call an endpoint
+const verifyAuth = async (req, res, next) => {
+  const user = await findUser('token', req.cookies[authCookieName]);
+  if (user) {
+    next();
+  } else {
+    res.status(401).send({ msg: 'Unauthorized' });
+  }
+};
+
+
+// SubmitScore
+apiRouter.post('/score', verifyAuth, (req, res) => {
+  console.log("submitting score");
+  scores = updateScores(req.body);
+  res.send(scores);
+  
+});
+
+function updateScores(jsonString){
+  return jsonString
+}
+
 // setAuthCookie in the HTTP response
 function setAuthCookie(res, authToken) {
   res.cookie(authCookieName, authToken, {
@@ -92,6 +116,7 @@ function setAuthCookie(res, authToken) {
     sameSite: 'strict',
   });
 }
+
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);

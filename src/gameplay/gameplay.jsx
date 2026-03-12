@@ -68,12 +68,10 @@ export function Gameplay() {
         list = JSON.parse(localStorage.getItem('scoreList'));
         
         for(const thing of list){
-            console.log(thing);
             if(thing[1] == false){
                 check = false;
             }
         }
-        console.log("check is ", check);
         if(check){
             //everyone has banked
             //set score and round changes
@@ -85,6 +83,9 @@ export function Gameplay() {
             //i will put this in other func so it can be called elsewhere
             allUnBank();
             if(parseInt(localStorage.getItem('round')) >= 10){
+                 //send the scores to the backend
+                console.log("funning func");
+                sendScores();
                 localStorage.setItem('state', false);
                 setState(false);
             }
@@ -146,11 +147,26 @@ export function Gameplay() {
             localStorage.setItem('scoreList', JSON.stringify(list));
         }
         //now check if we hit round 10
+        console.log("runing check");
         if(parseInt(localStorage.getItem('round')) >= 10){
+            //send the scores to the backend
+            console.log("funning func");
+            sendScores();
             localStorage.setItem('state', false);
             setState(false);
+            
         }
     }
+    async function sendScores(){
+
+        console.log("posting scores");
+        await fetch('/api/score', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: scoreList,
+    });
+    }
+
     function restart(){
         localStorage.setItem('score', 0);
         updateScore(0);
