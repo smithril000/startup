@@ -71,6 +71,17 @@ async function createUser(email, password) {
   console.log("succesfully added a user", user)
   return user;
 }
+// DeleteAuth logout a user
+apiRouter.delete('/auth/logout', async (req, res) => {
+  
+  const user = await findUser('token', req.cookies[authCookieName]);
+  if (user) {
+    delete user.token;
+  }
+  res.clearCookie(authCookieName);
+  res.status(204).end();
+  console.log("succ loged out")
+});
 
 // setAuthCookie in the HTTP response
 function setAuthCookie(res, authToken) {

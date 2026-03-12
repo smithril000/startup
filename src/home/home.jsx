@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import {useNavigate} from 'react-router-dom';
 import {AuthState} from './authState'
+import { MessageDialog } from './messageDialog';
 
 export function Home({ userName2, authState, onAuthChange }) {
     const [userName, setUserName] = React.useState(userName2);
@@ -70,6 +71,7 @@ export function Home({ userName2, authState, onAuthChange }) {
                     <div>{userName}</div>
                     <button type="submit" onClick={logout}>Logout</button>
                     </div>}
+                <MessageDialog message={displayError} onHide={() => setDisplayError(null)} />
             </div>
         </main>
   );
