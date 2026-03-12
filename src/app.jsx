@@ -6,8 +6,13 @@ import { Home } from './home/home';
 import { Gameplay} from './gameplay/gameplay';
 import { Scores } from './scores/scores';
 import { Rules } from './rules/rules';
+import { AuthState } from './home/authState';
 
 export default function App() {
+    const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
+    const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
+    const [authState, setAuthState] = React.useState(currentAuthState);
+
   return (
     <BrowserRouter>
     <div>
@@ -24,7 +29,12 @@ export default function App() {
 
         </header>
         <Routes>
-            <Route path='/' element={<Home />} exact />
+            <Route path='/' element={<Home userName={userName}
+                authState={authState}
+                onAuthChange={(userName, authState) => {
+                  setAuthState(authState);
+                  setUserName(userName);
+                }}/>} exact />
             <Route path='/gameplay' element={<Gameplay />} />
             <Route path='/scores' element={<Scores />} />
             <Route path='/rules' element={<Rules />} />
