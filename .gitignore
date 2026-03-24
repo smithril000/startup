@@ -1,2 +1,4 @@
 node_modules
 simon-service
+dbConfig.json
+simon-db

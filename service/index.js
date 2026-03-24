@@ -4,6 +4,14 @@ const express = require('express');
 const uuid = require('uuid');
 const app = express();
 app.use(express.static('public'));
+//connect to mongo
+const { MongoClient } = require('mongodb');
+const config = require('dbConfig.json');
+const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
+//connect to db cluster
+const client = new MongoClient(url);
+const db = client.db('rental');
+const collection = db.collection('house');
 
 const authCookieName = 'token';
 // The service port. In production the front-end code is statically hosted by the service on the same port.
