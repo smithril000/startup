@@ -100,15 +100,28 @@ const verifyAuth = async (req, res, next) => {
 
 
 // SubmitScore
-apiRouter.post('/score', verifyAuth, (req, res) => {
+apiRouter.post('/score', async (req, res) => {
   console.log("submitting score");
   scores = updateScores(req.body);
   res.send(scores);
   
 });
 
+//getScores
+apiRouter.get('/score', async (req, res) =>{
+  console.log("trying to get scores");
+  const scores = await DB.getScores();
+  res.send(scores);
+})
+
 function updateScores(jsonString){
-  return jsonString
+  let list = []
+  //list = JSON.parse(jsonString)
+  const score = {
+    name: jsonString[0],
+    score: jsonString[1]
+  }
+  DB.sendScore(score);
 }
 
 // setAuthCookie in the HTTP response

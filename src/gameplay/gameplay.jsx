@@ -163,8 +163,25 @@ export function Gameplay() {
         await fetch('/api/score', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: scoreList,
+        body: getHighScore(),
     });
+    }
+    function getHighScore(){
+        let list = [[]];
+        list = JSON.parse(localStorage.getItem('scoreList'));
+        let max = list[0][0];
+        let ind = 0;
+        for(let i = 0; i < list.length; i++){
+            if(list[i][0] > max){
+                max = list[i][0];
+                ind = i;
+            }
+        }
+        //now find who that is
+        list = JSON.parse(localStorage.getItem('userList'));
+        let player = list[ind];
+        console.log("the max score is", max, "by ", player);
+        return JSON.stringify([player, max]);
     }
 
     function restart(){
