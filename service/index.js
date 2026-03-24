@@ -24,7 +24,7 @@ var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 
-let users = []
+//let users = []
 let scores = []
 //endpoints
 // CreateAuth a new user
