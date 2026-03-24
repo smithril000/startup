@@ -12,19 +12,7 @@ export function Scores() {
 
 
   function updateScores(username, score){
-    //get the list
-    let list = [[]];
-    if(localStorage.getItem('scores') != null){
-      console.log("not empty");
-      list = JSON.parse(localStorage.getItem('scores'));
-    }
-    list.push([score, username])
-    list.sort((a,b) => b[0]-a[0]);
-    if(list.length > 8){
-      list.pop();
-    }
-    localStorage.setItem('scores', JSON.stringify(list));
-    setScores(JSON.stringify(list));
+    
   }
   return (
     <main>
