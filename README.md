@@ -81,3 +81,9 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [x] **Backend service endpoints** - Simple endpoints in `service/index` for auth and scores.
 - [x] **Frontend calls service endpoints** - All mocked functionality removed from the frontend and replaced with calls to the service.
 - [x] **Supports registration, login, logout, and restricted endpoint** - Fully support authentication and restrict access to scores.
+
+## DB deliverable
+For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
+
+- [x] **Stores data in MongoDB** - Scores stored in MongoDB from `service/database.js` - however I still am using local storage to temp store the score before the round finishes
+- [x] **Stores credentials in MongoDB** - Auth stored in MongoDB from `service/database.js`.
