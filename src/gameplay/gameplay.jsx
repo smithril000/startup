@@ -1,6 +1,7 @@
 
 import React from 'react';
 import './gameplay.css';
+import { GameEvent, GameNotifier } from './gameNotifier';
 export function Gameplay() {
     const [text, setText] = React.useState('');
     const [userList, setUserList] = React.useState(localStorage.getItem('userList') || 'null');
@@ -160,10 +161,12 @@ export function Gameplay() {
     async function sendScores(){
 
         console.log("posting scores");
+        //sending out hte score by websocket
+        GameNotifier.broadcastEvent(getHighScore()[0], GameEvent.End, getHighScore()[1]);
         await fetch('/api/score', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: getHighScore(),
+        body: JSON.stringify(getHighScore()),
     });
     }
     function getHighScore(){
@@ -181,7 +184,7 @@ export function Gameplay() {
         list = JSON.parse(localStorage.getItem('userList'));
         let player = list[ind];
         console.log("the max score is", max, "by ", player);
-        return JSON.stringify([player, max]);
+        return [player, max];
     }
 
     function restart(){
