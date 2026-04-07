@@ -1,6 +1,7 @@
 
 import React from 'react';
 import './gameplay.css';
+import { Players } from './players';
 import { GameEvent, GameNotifier } from './gameNotifier';
 export function Gameplay() {
     const [text, setText] = React.useState('');
@@ -159,14 +160,16 @@ export function Gameplay() {
         }
     }
     async function sendScores(){
-
+        let list = getHighScore()
+        let user = list[0];
+        let score = {score: list[1]}
         console.log("posting scores");
         //sending out hte score by websocket
-        GameNotifier.broadcastEvent(getHighScore()[0], GameEvent.End, getHighScore()[1]);
+        GameNotifier.broadcastEvent(user, GameEvent.End, score);
         await fetch('/api/score', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(getHighScore()),
+        body: JSON.stringify(list),
     });
     }
     function getHighScore(){
@@ -208,7 +211,9 @@ export function Gameplay() {
     //document.getElementById("removeButton").onclick = removePlayer;
   return (
     <main>
+        
         <div className="gamearea">
+            
             <div className = "addPlayerArea">
                 <h2>Who's playing?</h2>
                 <div className="enterName">
@@ -220,8 +225,10 @@ export function Gameplay() {
                         {userList != 'null' && JSON.parse(userList).map((todo, index) => (<li key = {index}>{todo}<button className="removeButton" type="button" onClick={ () => removePlayer(index)}>remove</button></li>))}
                     </ul>
                 </div>
+                <Players />
             </div>
             {state =='true' && <div className="gameplay">
+                
                 <div>Round: {localStorage.getItem('round')}</div>
                 <p className ="score">Score: {localStorage.getItem('score')}</p>
                 <img src="dice_image.png" alt="dice image" id="imageContainer" ></img>
