@@ -87,3 +87,13 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 - [x] **Stores data in MongoDB** - Scores stored in MongoDB from `service/database.js` - however I still am using local storage to temp store the score before the round finishes
 - [x] **Stores credentials in MongoDB** - Auth stored in MongoDB from `service/database.js`.
+
+## 🚀 WebSocket deliverable
+
+For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
+
+- [x] **Backend listens for WebSocket connection** - Backend webSocket management executed in `service/peerProxyt.js`.
+- [x] **Frontend makes WebSocket connection** - Backend webSocket management executed in `src/gameNotifier.js`.
+- [x] **Data sent over WebSocket connection** - JSON representation of game notifications.
+- [x] **WebSocket data displayed** - Game notifications displayed on Play view. Specifically under the player list area
+- [x] **Application is fully functional** - Ready for Demo day.
